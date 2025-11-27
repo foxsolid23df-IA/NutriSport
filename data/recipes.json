@@ -1,0 +1,169 @@
+[
+  {
+    "id": "bowl-avena-proteica",
+    "title": "Bowl de Avena Proteica",
+    "description": "Energía sostenida para toda la mañana con 25g de proteína",
+    "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=400&fit=crop",
+    "category": "desayuno",
+    "badge": "Alto en Proteína",
+    "stats": {
+      "calories": "380 kcal",
+      "protein": "25g proteína",
+      "time": "10 min"
+    },
+    "ingredients": [
+      "1/2 taza de avena en hojuelas",
+      "1 scoop de proteína en polvo (vainilla o chocolate)",
+      "1 taza de leche de almendras (o tu preferida)",
+      "1 cucharada de semillas de chía",
+      "1/2 plátano en rodajas",
+      "1 cucharada de mantequilla de maní",
+      "Canela al gusto"
+    ],
+    "instructions": [
+      "En una olla pequeña, mezcla la avena, la leche y las semillas de chía.",
+      "Cocina a fuego medio durante 5-7 minutos, revolviendo ocasionalmente hasta que espese.",
+      "Retira del fuego y agrega la proteína en polvo. Mezcla bien hasta integrar (si queda muy espeso, agrega un chorrito más de leche).",
+      "Sirve en un bowl y decora con el plátano, la mantequilla de maní y espolvorea canela.",
+      "¡Disfruta caliente!"
+    ]
+  },
+  {
+    "id": "ensalada-quinoa-pollo",
+    "title": "Ensalada de Quinoa y Pollo",
+    "description": "Comida completa y balanceada para atletas",
+    "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop",
+    "category": "almuerzo",
+    "badge": "Bajo en Grasa",
+    "stats": {
+      "calories": "450 kcal",
+      "protein": "35g proteína",
+      "time": "20 min"
+    },
+    "ingredients": [
+      "1 pechuga de pollo a la plancha, cortada en cubos",
+      "1 taza de quinoa cocida",
+      "1/2 taza de pepino picado",
+      "1/2 taza de tomates cherry cortados a la mitad",
+      "1/4 taza de cebolla morada picada",
+      "1 puñado de espinacas frescas",
+      "Aderezo: Jugo de limón, aceite de oliva, sal y pimienta"
+    ],
+    "instructions": [
+      "Cocina la quinoa según las instrucciones del paquete y deja enfriar.",
+      "Sazona el pollo con sal, pimienta y tus especias favoritas. Cocínalo a la plancha hasta que esté dorado y cocido por completo.",
+      "En un bowl grande, mezcla la quinoa, el pollo, el pepino, los tomates, la cebolla y las espinacas.",
+      "Prepara el aderezo mezclando el jugo de limón, aceite de oliva, sal y pimienta.",
+      "Vierte el aderezo sobre la ensalada y mezcla bien antes de servir."
+    ]
+  },
+  {
+    "id": "smoothie-recuperacion",
+    "title": "Smoothie de Recuperación",
+    "description": "Perfecta combinación de carbohidratos y proteína",
+    "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=600&h=400&fit=crop",
+    "category": "post-entreno",
+    "badge": "Recuperación",
+    "stats": {
+      "calories": "320 kcal",
+      "protein": "28g proteína",
+      "time": "5 min"
+    },
+    "ingredients": [
+      "1 taza de frutos rojos congelados (fresas, moras, arándanos)",
+      "1 scoop de proteína en polvo sabor vainilla",
+      "1 taza de agua de coco o leche",
+      "1/2 taza de yogur griego natural",
+      "Hielo al gusto"
+    ],
+    "instructions": [
+      "Coloca todos los ingredientes en la licuadora.",
+      "Licúa a alta velocidad hasta obtener una mezcla suave y cremosa.",
+      "Si está muy espeso, agrega un poco más de líquido. Si está muy líquido, agrega más hielo.",
+      "Sirve inmediatamente para disfrutarlo bien frío."
+    ]
+  },
+  {
+    "id": "energy-balls",
+    "title": "Energy Balls de Dátiles",
+    "description": "Snack natural perfecto pre o post entrenamiento",
+    "image": "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=600&h=400&fit=crop",
+    "category": "snack",
+    "badge": "Energía Rápida",
+    "stats": {
+      "calories": "180 kcal",
+      "protein": "8g proteína",
+      "time": "15 min"
+    },
+    "ingredients": [
+      "1 taza de dátiles sin hueso",
+      "1/2 taza de almendras o nueces",
+      "2 cucharadas de cacao en polvo sin azúcar",
+      "1 cucharada de mantequilla de almendras",
+      "Coco rallado para decorar (opcional)"
+    ],
+    "instructions": [
+      "Procesa las almendras en un procesador de alimentos hasta que estén finamente picadas.",
+      "Agrega los dátiles, el cacao y la mantequilla de almendras. Procesa hasta que se forme una masa pegajosa.",
+      "Toma porciones de la masa y forma bolitas con las manos.",
+      "Pasa las bolitas por coco rallado si lo deseas.",
+      "Refrigera por al menos 30 minutos antes de comer. Se conservan bien en el refrigerador por una semana."
+    ]
+  },
+  {
+    "id": "salmon-vegetales",
+    "title": "Salmón con Vegetales Asados",
+    "description": "Rico en omega-3 para reducir inflamación",
+    "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop",
+    "category": "almuerzo",
+    "badge": "Omega-3",
+    "stats": {
+      "calories": "520 kcal",
+      "protein": "40g proteína",
+      "time": "25 min"
+    },
+    "ingredients": [
+      "1 filete de salmón (aprox. 150g)",
+      "1 taza de espárragos",
+      "1 taza de brócoli en floretes",
+      "1 cucharada de aceite de oliva",
+      "Ajo en polvo, sal, pimienta y limón"
+    ],
+    "instructions": [
+      "Precalienta el horno a 200°C.",
+      "Coloca el salmón y los vegetales en una bandeja para hornear.",
+      "Rocía con aceite de oliva y sazona con ajo en polvo, sal y pimienta.",
+      "Hornea durante 15-20 minutos o hasta que el salmón esté cocido y los vegetales tiernos.",
+      "Sirve con un chorrito de jugo de limón fresco."
+    ]
+  },
+  {
+    "id": "pancakes-proteicos",
+    "title": "Pancakes Proteicos de Plátano",
+    "description": "Desayuno delicioso y nutritivo sin gluten",
+    "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=600&h=400&fit=crop",
+    "category": "desayuno",
+    "badge": "Sin Gluten",
+    "stats": {
+      "calories": "350 kcal",
+      "protein": "22g proteína",
+      "time": "15 min"
+    },
+    "ingredients": [
+      "1 plátano maduro",
+      "2 huevos",
+      "1 scoop de proteína en polvo (opcional, o 2 cucharadas de avena molida)",
+      "1/2 cucharadita de polvo para hornear",
+      "Canela al gusto",
+      "Aceite de coco para cocinar"
+    ],
+    "instructions": [
+      "En un bowl, machaca el plátano hasta hacerlo puré.",
+      "Agrega los huevos y bate bien.",
+      "Incorpora la proteína (o avena), el polvo para hornear y la canela. Mezcla hasta obtener una masa homogénea.",
+      "Calienta un poco de aceite de coco en un sartén a fuego medio.",
+      "Vierte porciones de la mezcla para formar los pancakes. Cocina 2-3 minutos por lado.",
+      "Sirve con miel, frutas o yogur."
+    ]
+  }
+]

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recetas saludables y nutritivas para deportistas - NutriSport">
+    <title>Recetas Saludables - NutriSport</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-icon">🏃</span>
+                    <span class="logo-text">NutriSport</span>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#videos" class="nav-link">Videos</a></li>
+                    <li><a href="recetas.html" class="nav-link active">Recetas</a></li>
+                    <li><a href="index.html#ejercicios" class="nav-link">Ejercicios</a></li>
+                    <li><a href="index.html#retos" class="nav-link">Retos</a></li>
+                    <li><a href="index.html#contacto" class="nav-link cta-button">Contáctanos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 120px; padding-bottom: 40px; background: var(--bg-darker);">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Recetas Saludables</h1>
+                <p class="section-subtitle">Descubre nuestra colección completa de recetas diseñadas para potenciar tu
+                    rendimiento deportivo.</p>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="desayuno">Desayuno</button>
+                <button class="filter-btn" data-filter="almuerzo">Almuerzo</button>
+                <button class="filter-btn" data-filter="snack">Snacks</button>
+                <button class="filter-btn" data-filter="post-entreno">Post-Entreno</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipes Grid -->
+    <section class="section recipes-section" style="padding-top: 0;">
+        <div class="container">
+            <div class="recipes-grid">
+                <div class="recipe-card glass-card" data-category="desayuno">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=400&fit=crop"
+                            alt="Bowl de Avena Proteica">
+                        <div class="recipe-badge">Alto en Proteína</div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Bowl de Avena Proteica</h3>
+                        <p class="recipe-description">Energía sostenida para toda la mañana con 25g de proteína</p>
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🔥</span>
+                                <span class="stat-value">380 kcal</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">💪</span>
+                                <span class="stat-value">25g proteína</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">⏱</span>
+                                <span class="stat-value">10 min</span>
+                            </div>
+                        </div>
+                        <button class="recipe-btn">Ver Receta</button>
+                    </div>
+                </div>
+
+                <div class="recipe-card glass-card" data-category="almuerzo">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop"
+                            alt="Ensalada de Quinoa y Pollo">
+                        <div class="recipe-badge">Bajo en Grasa</div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Ensalada de Quinoa y Pollo</h3>
+                        <p class="recipe-description">Comida completa y balanceada para atletas</p>
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🔥</span>
+                                <span class="stat-value">450 kcal</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">💪</span>
+                                <span class="stat-value">35g proteína</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">⏱</span>
+                                <span class="stat-value">20 min</span>
+                            </div>
+                        </div>
+                        <button class="recipe-btn">Ver Receta</button>
+                    </div>
+                </div>
+
+                <div class="recipe-card glass-card" data-category="post-entreno">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=600&h=400&fit=crop"
+                            alt="Smoothie de Recuperación">
+                        <div class="recipe-badge">Recuperación</div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Smoothie de Recuperación</h3>
+                        <p class="recipe-description">Perfecta combinación de carbohidratos y proteína</p>
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🔥</span>
+                                <span class="stat-value">320 kcal</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">💪</span>
+                                <span class="stat-value">28g proteína</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">⏱</span>
+                                <span class="stat-value">5 min</span>
+                            </div>
+                        </div>
+                        <button class="recipe-btn">Ver Receta</button>
+                    </div>
+                </div>
+
+                <div class="recipe-card glass-card" data-category="snack">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=600&h=400&fit=crop"
+                            alt="Energy Balls">
+                        <div class="recipe-badge">Energía Rápida</div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Energy Balls de Dátiles</h3>
+                        <p class="recipe-description">Snack natural perfecto pre o post entrenamiento</p>
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🔥</span>
+                                <span class="stat-value">180 kcal</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">💪</span>
+                                <span class="stat-value">8g proteína</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">⏱</span>
+                                <span class="stat-value">15 min</span>
+                            </div>
+                        </div>
+                        <button class="recipe-btn">Ver Receta</button>
+                    </div>
+                </div>
+
+                <div class="recipe-card glass-card" data-category="almuerzo">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop"
+                            alt="Salmón con Vegetales">
+                        <div class="recipe-badge">Omega-3</div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Salmón con Vegetales Asados</h3>
+                        <p class="recipe-description">Rico en omega-3 para reducir inflamación</p>
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🔥</span>
+                                <span class="stat-value">520 kcal</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">💪</span>
+                                <span class="stat-value">40g proteína</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">⏱</span>
+                                <span class="stat-value">25 min</span>
+                            </div>
+                        </div>
+                        <button class="recipe-btn">Ver Receta</button>
+                    </div>
+                </div>
+
+                <div class="recipe-card glass-card" data-category="desayuno">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=600&h=400&fit=crop"
+                            alt="Pancakes Proteicos">
+                        <div class="recipe-badge">Sin Gluten</div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Pancakes Proteicos de Plátano</h3>
+                        <p class="recipe-description">Desayuno delicioso y nutritivo sin gluten</p>
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🔥</span>
+                                <span class="stat-value">350 kcal</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">💪</span>
+                                <span class="stat-value">22g proteína</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">⏱</span>
+                                <span class="stat-value">15 min</span>
+                            </div>
+                        </div>
+                        <button class="recipe-btn">Ver Receta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🏃</span>
+                        <span class="logo-text">NutriSport</span>
+                    </div>
+                    <p class="footer-description">
+                        Tu compañero de confianza en nutrición deportiva. Transforma tu cuerpo y mente con ciencia y
+                        pasión.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Facebook">👍</a>
+                        <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Navegación</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#videos">Videos</a></li>
+                        <li><a href="recetas.html">Recetas</a></li>
+                        <li><a href="index.html#ejercicios">Ejercicios</a></li>
+                        <li><a href="index.html#retos">Retos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Recursos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Calculadora de Macros</a></li>
+                        <li><a href="#">Planes Personalizados</a></li>
+                        <li><a href="#">Consultoría Online</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Contacto</h3>
+                    <ul class="footer-contact">
+                        <li>📧 info@nutrisport.com</li>
+                        <li>📱 +52 55 1234 5678</li>
+                        <li>📍 Ciudad de México, México</li>
+                        <li>⏰ Lun - Vie: 9:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 NutriSport. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidad</a>
+                    <span>•</span>
+                    <a href="#">Términos de Uso</a>
+                    <span>•</span>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data/recipes.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

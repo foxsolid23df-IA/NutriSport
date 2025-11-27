@@ -24,28 +24,32 @@ mobileMenuToggle.addEventListener('click', () => {
 // Smooth scroll and active link highlighting
 navLinkItems.forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
+        const href = link.getAttribute('href');
 
-        // Remove active class from all links
-        navLinkItems.forEach(l => l.classList.remove('active'));
+        // Only intercept internal links
+        if (href.startsWith('#')) {
+            e.preventDefault();
 
-        // Add active class to clicked link
-        link.classList.add('active');
+            // Remove active class from all links
+            navLinkItems.forEach(l => l.classList.remove('active'));
 
-        // Close mobile menu if open
-        mobileMenuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
+            // Add active class to clicked link
+            link.classList.add('active');
 
-        // Smooth scroll to section
-        const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
+            // Close mobile menu if open
+            mobileMenuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
 
-        if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+            // Smooth scroll to section
+            const targetSection = document.querySelector(href);
+
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         }
     });
 });
@@ -66,9 +70,12 @@ window.addEventListener('scroll', () => {
     });
 
     navLinkItems.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+            link.classList.remove('active');
+            if (href === `#${current}`) {
+                link.classList.add('active');
+            }
         }
     });
 });
@@ -224,19 +231,212 @@ videoCards.forEach(card => {
 // ===================================
 // Recipe Card Interactions
 // ===================================
+// ===================================
+// Recipe Card Interactions & Modal
+// ===================================
+// ===================================
+// Recipe Card Interactions & Modal
+// ===================================
 const recipeButtons = document.querySelectorAll('.recipe-btn');
+// Use global data if available, otherwise empty array
+let recipesData = typeof RECIPES_DATA !== 'undefined' ? RECIPES_DATA : [];
 
-recipeButtons.forEach(button => {
+recipeButtons.forEach((button, index) => {
     button.addEventListener('click', (e) => {
         e.stopPropagation();
 
         const recipeCard = button.closest('.recipe-card');
-        const recipeTitle = recipeCard.querySelector('.recipe-title').textContent;
+        const recipeTitle = recipeCard.querySelector('.recipe-title').textContent.trim();
 
-        // Simple notification (you can enhance this with a proper modal)
-        showNotification(`📖 Abriendo receta: ${recipeTitle}`);
+        console.log('Clicked recipe:', recipeTitle);
+        console.log('Available recipes:', recipesData);
+
+        const recipe = recipesData.find(r => r.title.trim() === recipeTitle);
+
+        if (recipe) {
+            openRecipeModal(recipe);
+        } else {
+            console.warn('Recipe not found in data:', recipeTitle);
+            // Fallback if JSON isn't loaded or match not found
+            showNotification(`📖 Abriendo receta: ${recipeTitle}`);
+        }
     });
 });
+
+function openRecipeModal(recipe) {
+    const modal = document.createElement('div');
+    modal.className = 'recipe-modal-overlay';
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        padding: 20px;
+        backdrop-filter: blur(5px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+
+    const modalContent = document.createElement('div');
+    modalContent.className = 'recipe-modal-content';
+    modalContent.style.cssText = `
+        background: #ffffff;
+        width: 100%;
+        max-width: 800px;
+        max-height: 90vh;
+        border-radius: 20px;
+        overflow-y: auto;
+        position: relative;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+    `;
+
+    modalContent.innerHTML = `
+        <div style="position: relative; height: 300px;">
+            <img src="${recipe.image}" alt="${recipe.title}" style="width: 100%; height: 100%; object-fit: cover;">
+            <button class="close-modal-btn" style="
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: rgba(255, 255, 255, 0.9);
+                border: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                font-size: 24px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: transform 0.2s;
+            ">×</button>
+            <div style="
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+                color: white;
+                padding: 6px 16px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.9rem;
+            ">${recipe.badge}</div>
+        </div>
+        
+        <div style="padding: 30px;">
+            <h2 style="
+                font-family: 'Outfit', sans-serif;
+                font-size: 2rem;
+                font-weight: 800;
+                color: #111827;
+                margin-bottom: 10px;
+            ">${recipe.title}</h2>
+            
+            <p style="color: #6b7280; margin-bottom: 24px; font-size: 1.1rem;">${recipe.description}</p>
+            
+            <div style="
+                display: flex;
+                gap: 20px;
+                margin-bottom: 30px;
+                padding: 15px;
+                background: #f0fdf4;
+                border-radius: 12px;
+                flex-wrap: wrap;
+            ">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 1.2rem;">🔥</span>
+                    <span style="font-weight: 600; color: #059669;">${recipe.stats.calories}</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 1.2rem;">💪</span>
+                    <span style="font-weight: 600; color: #059669;">${recipe.stats.protein}</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 1.2rem;">⏱</span>
+                    <span style="font-weight: 600; color: #059669;">${recipe.stats.time}</span>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; @media (max-width: 768px) { grid-template-columns: 1fr; }">
+                <div>
+                    <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; margin-bottom: 16px; color: #111827;">Ingredientes</h3>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+                        ${recipe.ingredients.map(ing => `
+                            <li style="display: flex; align-items: flex-start; gap: 10px; color: #4b5563;">
+                                <span style="color: #10b981; font-weight: bold;">•</span>
+                                ${ing}
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; margin-bottom: 16px; color: #111827;">Instrucciones</h3>
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        ${recipe.instructions.map((step, idx) => `
+                            <div style="display: flex; gap: 16px;">
+                                <div style="
+                                    background: #ecfdf5;
+                                    color: #059669;
+                                    width: 32px;
+                                    height: 32px;
+                                    border-radius: 50%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-weight: bold;
+                                    flex-shrink: 0;
+                                ">${idx + 1}</div>
+                                <p style="color: #4b5563; line-height: 1.6; margin-top: 4px;">${step}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+
+    // Animation entry
+    requestAnimationFrame(() => {
+        modal.style.opacity = '1';
+        modalContent.style.transform = 'translateY(0)';
+    });
+
+    // Close handlers
+    const closeBtn = modal.querySelector('.close-modal-btn');
+    const closeModal = () => {
+        modal.style.opacity = '0';
+        modalContent.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+            document.body.removeChild(modal);
+        }, 300);
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Close on Escape key
+    const escHandler = (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+            document.removeEventListener('keydown', escHandler);
+        }
+    };
+    document.addEventListener('keydown', escHandler);
+}
 
 // ===================================
 // Exercise Card Interactions
